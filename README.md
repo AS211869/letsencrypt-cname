@@ -4,7 +4,7 @@ AS211869.net (and a few of my other domains) use self-hosted DNS servers which d
 
 # Usage
 
-Create a DNS zone at DigitalOcean, and set your NS records for that (sub)domain to the DigitalOcean name servers.
+Create a DNS zone at DigitalOcean, and set your NS records for that (sub)domain to the DigitalOcean name servers. Enter this zone into a text file called `zone.txt`.
 
 ![DigitalOcean DNS](https://cdn.truewinter.dev/i/5f5e90.png)
 
