@@ -16,7 +16,7 @@ Create a CNAME record for `_acme-challenge.example.com` and point it to `example
 
 ![CNAME Record](https://cdn.truewinter.dev/i/f3248f.png)
 
-Modify the command in `command.txt` as needed (remove the dry run flag and change the domains), and the run the command with `sudo`. If successful, you should now have a LetsEncrypt wildcard certificate in the directory indicated by the script.
+Modify the command in `command.txt` as needed, and the run the command with `sudo`. If successful, you should now have a LetsEncrypt wildcard certificate in the directory indicated by the script.
 
 # Requirements
 
