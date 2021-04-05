@@ -10,6 +10,16 @@ if [ ! -s zone.txt ]; then
         exit 1;
 fi
 
+if ! command -v jq &> /dev/null; then
+    echo "jq is not installed"
+    exit 1
+fi
+
+if ! command -v curl &> /dev/null; then
+    echo "curl is not installed"
+    exit 1
+fi
+
 TW_ZONE=`cat zone.txt`
 TW_KEY=`cat key.txt`
 TW_CERTBOT_RECORD_ID=`echo $CERTBOT_AUTH_OUTPUT | jq .domain_record.id`

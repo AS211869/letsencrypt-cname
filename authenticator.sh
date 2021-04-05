@@ -1,13 +1,23 @@
 #!/bin/bash
 
 if [ ! -s key.txt ]; then
-	echo "Key file is empty or does not exist";
-	exit 1;
+	echo "Key file is empty or does not exist"
+	exit 1
 fi
 
 if [ ! -s zone.txt ]; then
-	echo "Zone file is empty or does not exist";
-	exit 1;
+	echo "Zone file is empty or does not exist"
+	exit 1
+fi
+
+if ! command -v jq &> /dev/null; then
+    echo "jq is not installed"
+    exit 1
+fi
+
+if ! command -v curl &> /dev/null; then
+    echo "curl is not installed"
+    exit 1
 fi
 
 TW_ZONE=`cat zone.txt`

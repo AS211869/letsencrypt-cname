@@ -18,3 +18,8 @@ Create a CNAME record for `_acme-challenge.example.com` and point it to `example
 
 Modify the command in `command.txt` as needed (remove the dry run flag and change the domains), and the run the command with `sudo`. If successful, you should now have a LetsEncrypt wildcard certificate in the directory indicated by the script.
 
+# Requirements
+
+- Linux (tested on Ubuntu 18.04 and 20.04)
+- curl
+- jq
