@@ -26,9 +26,7 @@ fi
 if [ -s `echo ${SCRIPT_DIR}/sleep.txt` ]; then
 	SLEEP_TMP=`cat ${SCRIPT_DIR}/sleep.txt`
 	re='^[0-9]+$'
-	if ! [[ $SLEEP_TMP =~ $re ]] ; then
-		echo "Sleep file is not a number, reverting to default" >&2
-	else
+	if [[ $SLEEP_TMP =~ $re ]] ; then
 		SLEEP=$SLEEP_TMP
 	fi
 fi
@@ -44,7 +42,5 @@ TW_CERTBOT_DOMAIN=`echo $CERTBOT_DOMAIN | sed 's/\./-/g'`
 
 curl -s -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $TW_KEY" \
 	-d '{"type":"TXT","name":"'"$TW_CERTBOT_DOMAIN"'","data":"'"$CERTBOT_VALIDATION"'","priority":null,"port":null,"ttl":100,"weight":null,"flags":null,"tag":null}' "https://api.digitalocean.com/v2/domains/$TW_ZONE/records"
-
-echo "Waiting $SLEEP seconds"
 
 sleep $SLEEP
