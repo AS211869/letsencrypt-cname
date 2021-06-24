@@ -16,6 +16,8 @@ Create a CNAME record for `_acme-challenge.example.com` and point it to `example
 
 ![CNAME Record](https://cdn.truewinter.dev/i/f3248f.png)
 
+By default, the script will wait 30 seconds before allowing LetsEncrypt to validate the DNS records. This can be overridden by creating a file called `sleep.txt` containing the number of seconds the script should wait.
+
 Modify the command in `command.txt` as needed, and the run the command with `sudo`. If successful, you should now have a LetsEncrypt wildcard certificate in the directory indicated by the script.
 
 # Requirements
